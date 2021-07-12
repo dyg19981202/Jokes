@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/newJokesFragment"
+        android:title="首页"
+        android:icon="@drawable/ic_baseline_home_24"
+        />
+
+    <item
+        android:id="@+id/favoritesFragment"
+        android:title="收藏"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        />
+
+    <item
+        android:id="@+id/searchFragment"
+        android:title="搜索"
+        android:icon="@drawable/ic_baseline_search_24"
+        />
+
+</menu>
