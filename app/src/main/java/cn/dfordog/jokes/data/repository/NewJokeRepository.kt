@@ -1,15 +1,21 @@
 package cn.dfordog.jokes.data.repository
 
 import cn.dfordog.jokes.data.db.AppDatabase
+import cn.dfordog.jokes.data.entity.DBSavePage
 import cn.dfordog.jokes.data.entity.Data
 import cn.dfordog.jokes.utils.RetrofitUtil
 
 class NewJokeRepository(private val db: AppDatabase) {
 
-    suspend fun upsert(joke: Data) = db.jokeDao().upsert(joke)
-    suspend fun delete(joke: Data) = db.jokeDao().delete(joke)
+    /**
+     * 将页数存入数据库
+     */
+    suspend fun savePage(dbSavePage: DBSavePage) = db.savePageDap().upsert(dbSavePage)
 
-    fun queryJokes() = db.jokeDao().queryAllJokes()
+    /**
+     * 将页数从数据库取出
+     */
+    fun queryPage() = db.savePageDap().queryPage()
 
     /**
      * 从接口获取笑话数据
